@@ -1,0 +1,23 @@
+# Use iOS 8 and above
+platform :ios, '8.0'
+
+# Specify Workspace
+workspace 'SDJAvenir'
+
+target 'SDJAvenir' do
+  # Stripe
+  pod 'Stripe', '~> 11.2.0'
+
+  # Install additional dependencies
+  pod 'Firebase/Core'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Crash'
+  pod 'Firebase/Database'
+  pod 'Firebase/Firestore', '5.1.0'
+  pod 'Firebase/Messaging'
+  pod 'Firebase/Performance'
+  pod 'Firebase/Storage'
+
+  # pod 'RNSound', :path => '../node_modules/react-native-sound'
+
+end
