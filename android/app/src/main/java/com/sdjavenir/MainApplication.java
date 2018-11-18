@@ -1,8 +1,12 @@
 package com.sdjavenir;
 
+import android.accounts.AccountManager;
 import android.app.Application;
+import android.content.Intent;
 
 import com.facebook.CallbackManager;
+import com.facebook.FacebookSdk;
+import com.facebook.appevents.AppEventsLogger;
 import com.facebook.react.ReactApplication;
 import com.gettipsi.stripe.StripeReactPackage;
 import com.facebook.reactnative.androidsdk.FBSDKPackage;

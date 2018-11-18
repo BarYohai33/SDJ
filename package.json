@@ -10,6 +10,7 @@
     "adm-zip": "^0.4.11",
     "axios": "^0.18.0",
     "firebase": "^5.0.4",
+    "jsc-android": "^236355.1.0",
     "native-base": "^2.4.5",
     "plist": "^3.0.1",
     "react": "16.3.1",
@@ -23,6 +24,7 @@
   "devDependencies": {
     "@babel/runtime": "7.0.0",
     "babel-jest": "23.6.0",
+    "babel-polyfill": "^6.26.0",
     "babel-preset-react-native": "^5.0.2",
     "jest": "23.1.0",
     "metro-react-native-babel-preset": "^0.45.1",

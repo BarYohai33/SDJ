@@ -1,12 +1,10 @@
 package com.sdjavenir;
 
-import com.facebook.react.ReactActivity;
-import com.facebook.CallbackManager;
 import android.content.Intent;
 
-public class MainActivity extends ReactActivity {
+import com.facebook.react.ReactActivity;
 
-    CallbackManager mCallbackManager;
+public class MainActivity extends ReactActivity {
     /**
      * Returns the name of the main component registered from JavaScript.
      * This is used to schedule rendering of the component.
@@ -15,6 +13,7 @@ public class MainActivity extends ReactActivity {
     protected String getMainComponentName() {
         return "SDJAvenir";
     }
+
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {

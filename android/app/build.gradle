@@ -1,4 +1,5 @@
 apply plugin: "com.android.application"
+apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
 
 import com.android.build.OutputFile
 
@@ -76,6 +77,16 @@ project.ext.react = [
     entryFile: "index.js"
 ]
 
+
+configurations.all {
+    resolutionStrategy {
+        eachDependency { DependencyResolveDetails details ->
+            if (details.requested.name == 'android-jsc') {
+                details.useTarget group: details.requested.group, name: 'android-jsc-intl', version: 'r236355'
+            }
+        }
+    }
+}
 apply from: "../../node_modules/react-native/react.gradle"
 
 /**
@@ -107,6 +118,14 @@ android {
             abiFilters "armeabi-v7a", "x86"
         }
     }
+    signingConfigs {
+        release {
+            storeFile file(MYAPP_RELEASE_STORE_FILE)
+            storePassword MYAPP_RELEASE_STORE_PASSWORD
+            keyAlias MYAPP_RELEASE_KEY_ALIAS
+            keyPassword MYAPP_RELEASE_KEY_PASSWORD
+        }
+    }
     splits {
         abi {
             reset()
@@ -119,6 +138,7 @@ android {
         release {
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+            signingConfig signingConfigs.release
         }
     }
     // applicationVariants are e.g. debug, release
@@ -136,18 +156,11 @@ android {
     }
 }
 
-configurations.all {
-    resolutionStrategy.eachDependency { DependencyResolveDetails details ->
-        if (details.getRequested().getGroup() == 'com.google.android.gms') {
-            details.useVersion('9.8.0')
-        }
-    }
-}
-
 dependencies {
-    compile project(':tipsi-stripe')
-    compile project(':react-native-fbsdk')
+    implementation project(':react-native-fbsdk')
+    implementation project(':tipsi-stripe')
     implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation "com.google.firebase:firebase-core:16.0.4"
     implementation "com.android.support:design:27.1.0"
     implementation "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"
     implementation "com.facebook.react:react-native:+"  // From node_modules

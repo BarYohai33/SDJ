@@ -5,7 +5,6 @@ import { Root, Spinner } from 'native-base';
 
 // Firebase
 import firebase from './general/firebase/';
-
 // Routes
 import SignedIn from './routeSignedIn';
 import SignedOut from './routeSignedOut';
@@ -55,7 +54,7 @@ class App extends Component {
     }
 
     render() {
-        console.ignoredYellowBox = [ 'Setting a timer' ];
+        console.disableYellowBox = true
         return (
             <Root onLayout={this.onLayout}>
             {
