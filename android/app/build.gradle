@@ -120,10 +120,10 @@ android {
     }
     signingConfigs {
         release {
-            storeFile file(MYAPP_RELEASE_STORE_FILE)
+            /*storeFile file(MYAPP_RELEASE_STORE_FILE)
             storePassword MYAPP_RELEASE_STORE_PASSWORD
             keyAlias MYAPP_RELEASE_KEY_ALIAS
-            keyPassword MYAPP_RELEASE_KEY_PASSWORD
+            keyPassword MYAPP_RELEASE_KEY_PASSWORD*/
         }
     }
     splits {
@@ -162,7 +162,7 @@ dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "com.google.firebase:firebase-core:16.0.4"
     implementation "com.android.support:design:27.1.0"
-    implementation "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"
+    implementation "com.android.support:appcompat-v7:27.1.0"
     implementation "com.facebook.react:react-native:+"  // From node_modules
 }
 
