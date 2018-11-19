@@ -4479,6 +4479,10 @@ onetime@^2.0.0:
   dependencies:
     mimic-fn "^1.0.0"
 
+opencollective-postinstall@^2.0.0:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/opencollective-postinstall/-/opencollective-postinstall-2.0.1.tgz#798e83e168f7b91949061c2683f762af747f17cc"
+
 opn@^3.0.2:
   version "3.0.3"
   resolved "http://registry.npmjs.org/opn/-/opn-3.0.3.tgz#b6d99e7399f78d65c3baaffef1fb288e9b85243a"
@@ -4887,7 +4891,7 @@ react-devtools-core@^3.4.0:
     shell-quote "^1.6.1"
     ws "^3.3.1"
 
-react-is@^16.6.0-alpha.8af6728:
+react-is@^16.6.3:
   version "16.6.3"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.6.3.tgz#d2d7462fcfcbe6ec0da56ad69047e47e56e7eac0"
 
@@ -4935,6 +4939,13 @@ react-native-fbsdk@^0.8.0:
     progress "^2.0.0"
     pump "^1.0.2"
     xcode "^0.9.3"
+
+react-native-firebase@^5.1.0:
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/react-native-firebase/-/react-native-firebase-5.1.0.tgz#85c535394c8518840609aae15b3dd0c65d8d2c59"
+  dependencies:
+    opencollective-postinstall "^2.0.0"
+    prop-types "^15.6.2"
 
 react-native-iphone-x-helper@^1.0.1:
   version "1.2.0"
@@ -5083,14 +5094,14 @@ react-proxy@^1.1.7:
     lodash "^4.6.1"
     react-deep-force-update "^1.0.0"
 
-react-test-renderer@16.6.0-alpha.8af6728:
-  version "16.6.0-alpha.8af6728"
-  resolved "https://registry.yarnpkg.com/react-test-renderer/-/react-test-renderer-16.6.0-alpha.8af6728.tgz#5b9eaa972f0016c95d1ef5d93f727c5dc4a5a0ee"
+react-test-renderer@16.6.3:
+  version "16.6.3"
+  resolved "https://registry.yarnpkg.com/react-test-renderer/-/react-test-renderer-16.6.3.tgz#5f3a1a7d5c3379d46f7052b848b4b72e47c89f38"
   dependencies:
     object-assign "^4.1.1"
     prop-types "^15.6.2"
-    react-is "^16.6.0-alpha.8af6728"
-    scheduler "^0.10.0-alpha.8af6728"
+    react-is "^16.6.3"
+    scheduler "^0.11.2"
 
 react-timer-mixin@^0.13.2:
   version "0.13.4"
@@ -5428,9 +5439,9 @@ schedule@^0.4.0:
   dependencies:
     object-assign "^4.1.1"
 
-scheduler@^0.10.0-alpha.8af6728:
-  version "0.10.0"
-  resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.10.0.tgz#7988de90fe7edccc774ea175a783e69c40c521e1"
+scheduler@^0.11.2:
+  version "0.11.2"
+  resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.11.2.tgz#a8db5399d06eba5abac51b705b7151d2319d33d3"
   dependencies:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"

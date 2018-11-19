@@ -1,5 +1,5 @@
 // Firebase
-import firebase from 'firebase';
+import firebase from 'react-native-firebase';
 
 // Secrets
 import { FIREBASE_API_KEY as apiKey } from '../config/secrets';

@@ -13,7 +13,7 @@ target 'SDJAvenir' do
   pod 'Firebase/Auth'
   pod 'Firebase/Crash'
   pod 'Firebase/Database'
-  pod 'Firebase/Firestore', '5.1.0'
+  pod 'Firebase/Firestore'
   pod 'Firebase/Messaging'
   pod 'Firebase/Performance'
   pod 'Firebase/Storage'

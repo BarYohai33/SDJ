@@ -5,6 +5,7 @@ import { Root, Spinner } from 'native-base';
 
 // Firebase
 import firebase from './general/firebase/';
+//import RNfirebase from 'react-native-firebase';
 // Routes
 import SignedIn from './routeSignedIn';
 import SignedOut from './routeSignedOut';
@@ -47,6 +48,24 @@ class App extends Component {
                 this.setState({ user, loading: false });
             }
         });
+        firebase.messaging().hasPermission()
+          .then(enabled => {
+            if (enabled) {
+              firebase.messaging().getToken().then(token => {
+                console.log("LOG: ", token);
+              })
+              // user has permissions
+            } else {
+              firebase.messaging().requestPermission()
+                .then(() => {
+                  alert("User Now Has Permission")
+                })
+                .catch(error => {
+                  alert("Error", error)
+                  // User has rejected permissions  
+                });
+            }
+          });
     }
 
     onLayout(event) {

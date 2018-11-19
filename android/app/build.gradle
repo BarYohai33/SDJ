@@ -157,6 +157,7 @@ android {
 }
 
 dependencies {
+    compile project(':react-native-firebase')
     implementation project(':react-native-fbsdk')
     implementation project(':tipsi-stripe')
     implementation fileTree(dir: "libs", include: ["*.jar"])
