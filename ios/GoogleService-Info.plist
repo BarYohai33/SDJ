@@ -7,9 +7,9 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>599059477459-9p826t47na1bfhjd3e1cj3f1gueao499.apps.googleusercontent.com</string>
+	<string>599059477459-ok7pc002o191j3u3u6c2fp8l1uj79g5f.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.599059477459-9p826t47na1bfhjd3e1cj3f1gueao499</string>
+	<string>com.googleusercontent.apps.599059477459-ok7pc002o191j3u3u6c2fp8l1uj79g5f</string>
 	<key>API_KEY</key>
 	<string>AIzaSyBskxTq862tMtfy5ckdRRH-xi08CEYCTkI</string>
 	<key>GCM_SENDER_ID</key>
@@ -17,7 +17,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.lesilencedesjustes.tsedaka</string>
+	<string>com.sdj.tsedaka</string>
 	<key>PROJECT_ID</key>
 	<string>sdjavenir-c226c</string>
 	<key>STORAGE_BUCKET</key>
@@ -33,7 +33,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:599059477459:ios:22ab95200eee4873</string>
+	<string>1:599059477459:ios:bb9194eeab44d035</string>
 	<key>DATABASE_URL</key>
 	<string>https://sdjavenir-c226c.firebaseio.com</string>
 </dict>

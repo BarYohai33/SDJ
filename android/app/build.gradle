@@ -1,3 +1,4 @@
+apply plugin: 'com.google.gms.google-services'
 apply plugin: "com.android.application"
 apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
 
@@ -109,7 +110,7 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
 
     defaultConfig {
-        applicationId "com.sdjavenir"
+        applicationId "com.sdj.tsedaka"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
@@ -117,6 +118,7 @@ android {
         ndk {
             abiFilters "armeabi-v7a", "x86"
         }
+        multiDexEnabled true
     }
     signingConfigs {
         release {
@@ -157,13 +159,23 @@ android {
 }
 
 dependencies {
-    compile project(':react-native-firebase')
+    implementation project(':react-native-firebase')
     implementation project(':react-native-fbsdk')
     implementation project(':tipsi-stripe')
     implementation fileTree(dir: "libs", include: ["*.jar"])
+    // Firebase dependencies
+    implementation "com.google.android.gms:play-services-base:16.0.1"
     implementation "com.google.firebase:firebase-core:16.0.4"
-    implementation "com.android.support:design:27.1.0"
-    implementation "com.android.support:appcompat-v7:27.1.0"
+    // Database
+    implementation "com.google.firebase:firebase-database:16.0.4"
+    // Authentication
+    implementation "com.google.firebase:firebase-auth:16.0.4"
+    // Messaging
+    implementation "com.google.firebase:firebase-messaging:17.3.3"
+    implementation 'me.leolin:ShortcutBadger:1.1.21@aar'
+    implementation 'com.android.support:support-v4:27.1.1'
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support:design:27.1.1'
     implementation "com.facebook.react:react-native:+"  // From node_modules
 }
 

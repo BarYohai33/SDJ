@@ -1,4 +1,4 @@
-package com.sdjavenir;
+package com.sdj.tsedaka;
 
 import android.content.Intent;
 

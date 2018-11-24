@@ -8,5 +8,9 @@
 	<array>
 		<string>merchant.com.sdjavenir</string>
 	</array>
+	<key>keychain-access-groups</key>
+	<array>
+		<string>$(AppIdentifierPrefix)com.sdj.tsedaka</string>
+	</array>
 </dict>
 </plist>

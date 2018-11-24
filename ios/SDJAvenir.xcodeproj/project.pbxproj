@@ -42,9 +42,10 @@
 		4B207871C86042E3A21BBC2D /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3D6F569B3BBA471F9C4EEB65 /* Foundation.ttf */; };
 		506FE6E92BAC4FFDA29CE5D9 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FC7974F558A04B0A8D91D2AF /* Ionicons.ttf */; };
 		58C9A46A10034F31BAE8A974 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 17C6560B4C40425F93ED6A01 /* MaterialIcons.ttf */; };
-		6469985FCC7D406CB47A46DB /* libRNFirebase.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D824C381ED44E128C057004 /* libRNFirebase.a */; };
+		660576E821A78D7A0004B5A6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 660576E721A78D790004B5A6 /* GoogleService-Info.plist */; };
 		6676BD52AA3045FD9B3FC256 /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 202AB5778E7F45FA850BC2E1 /* Entypo.ttf */; };
-		667D16E421A3761D00C56885 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 667D16E321A3761D00C56885 /* GoogleService-Info.plist */; };
+		66D6E4FD21A7251800CD26CA /* libFirebaseMessaging.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 66D6E4FC21A7251800CD26CA /* libFirebaseMessaging.a */; };
+		66E007BE21A73B7200307C25 /* libRNFirebase.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 667D171E21A377E400C56885 /* libRNFirebase.a */; };
 		66F85525219C9F7F0017345B /* libRCTLinking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C398B91ACF4ADC00677621 /* libRCTLinking.a */; };
 		72C3DD902B4042C382870263 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 854EF64D3ABD4030902BC208 /* FontAwesome.ttf */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
@@ -396,7 +397,8 @@
 		4F98D53E391E4A13B050DF4C /* RCTFBSDK.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RCTFBSDK.xcodeproj; path = "../node_modules/react-native-fbsdk/ios/RCTFBSDK.xcodeproj"; sourceTree = "<group>"; };
 		591DFB0A7F3B4D8C82230776 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ./ios/Frameworks/FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
-		667D16E321A3761D00C56885 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		660576E721A78D790004B5A6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		66D6E4FC21A7251800CD26CA /* libFirebaseMessaging.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libFirebaseMessaging.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		8135C5ABA7884624A1EEED94 /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/native-base/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
@@ -428,6 +430,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66E007BE21A73B7200307C25 /* libRNFirebase.a in Frameworks */,
+				66D6E4FD21A7251800CD26CA /* libFirebaseMessaging.a in Frameworks */,
 				66F85525219C9F7F0017345B /* libRCTLinking.a in Frameworks */,
 				0B56939C20CD727800066BC2 /* libTPSStripe.a in Frameworks */,
 				ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */,
@@ -446,7 +450,6 @@
 				FEDC2323B78B490D8AB45D6E /* FBSDKShareKit.framework in Frameworks */,
 				2C060F8265CD4674B7E0EA1F /* FBSDKLoginKit.framework in Frameworks */,
 				F6CBE6220C77AFB117D9A873 /* libPods-SDJAvenir.a in Frameworks */,
-				6469985FCC7D406CB47A46DB /* libRNFirebase.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -583,7 +586,7 @@
 		13B07FAE1A68108700A75B9A /* SDJAvenir */ = {
 			isa = PBXGroup;
 			children = (
-				667D16E321A3761D00C56885 /* GoogleService-Info.plist */,
+				660576E721A78D790004B5A6 /* GoogleService-Info.plist */,
 				0B9931EC20CD5B660087822F /* SDJAvenir.entitlements */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
@@ -622,6 +625,7 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				66D6E4FC21A7251800CD26CA /* libFirebaseMessaging.a */,
 				2D16E6891FA4F8E400B85C8A /* libReact.a */,
 				591DFB0A7F3B4D8C82230776 /* FBSDKCoreKit.framework */,
 				28ACCF146FDC433B96FF2A11 /* FBSDKShareKit.framework */,
@@ -857,8 +861,17 @@
 							com.apple.BackgroundModes = {
 								enabled = 1;
 							};
+							com.apple.InterAppAudio = {
+								enabled = 0;
+							};
+							com.apple.Keychain = {
+								enabled = 1;
+							};
 							com.apple.Push = {
 								enabled = 1;
+							};
+							com.apple.Siri = {
+								enabled = 0;
 							};
 						};
 					};
@@ -1263,7 +1276,7 @@
 				8619A3C0693844EC903F698D /* Roboto_medium.ttf in Resources */,
 				8D0B7564EC184F5F86FE8CE8 /* Roboto.ttf in Resources */,
 				D8F544FB24034BCCB32BC157 /* rubicon-icon-font.ttf in Resources */,
-				667D16E421A3761D00C56885 /* GoogleService-Info.plist in Resources */,
+				660576E821A78D7A0004B5A6 /* GoogleService-Info.plist in Resources */,
 				306F9A4006814638AEBB9078 /* SimpleLineIcons.ttf in Resources */,
 				FC4550DF2F2541B786FA825E /* Zocial.ttf in Resources */,
 				DBEACA55419C458A8A329F89 /* Feather.ttf in Resources */,
@@ -1510,16 +1523,16 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-fbsdk/ios/RCTFBSDK/**",
-					"$(SRCROOT)/../node_modules/react-native-sound-player/ios",
-					"$(SRCROOT)/../node_modules/react-native-firebase/ios/RNFirebase/**",
+					"$(SRCROOT)/../node_modules/react-native-fIrebase/ios/RNFirebase/**",
 				);
 				INFOPLIST_FILE = SDJAvenir/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sdj.tsedaka;
 				PRODUCT_NAME = SDJAvenir;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1542,17 +1555,17 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-fbsdk/ios/RCTFBSDK/**",
-					"$(SRCROOT)/../node_modules/react-native-sound-player/ios",
-					"$(SRCROOT)/../node_modules/react-native-firebase/ios/RNFirebase/**",
+					"$(SRCROOT)/../node_modules/react-native-fIrebase/ios/RNFirebase/**",
 				);
 				INFOPLIST_FILE = SDJAvenir/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sdj.tsedaka;
 				PRODUCT_NAME = SDJAvenir;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";

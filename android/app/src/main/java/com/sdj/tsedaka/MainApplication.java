@@ -1,20 +1,16 @@
-package com.sdjavenir;
+package com.sdj.tsedaka;
 
-import android.accounts.AccountManager;
 import android.app.Application;
-import android.content.Intent;
 
 import com.facebook.CallbackManager;
-import com.facebook.FacebookSdk;
-import com.facebook.appevents.AppEventsLogger;
 import com.facebook.react.ReactApplication;
+import com.gettipsi.stripe.StripeReactPackage;
+import com.facebook.reactnative.androidsdk.FBSDKPackage;
 import io.invertase.firebase.RNFirebasePackage;
-import com.gettipsi.stripe.StripeReactPackage;
-import com.facebook.reactnative.androidsdk.FBSDKPackage;
-import com.gettipsi.stripe.StripeReactPackage;
-import com.facebook.reactnative.androidsdk.FBSDKPackage;
-import com.gettipsi.stripe.StripeReactPackage;
-import com.facebook.reactnative.androidsdk.FBSDKPackage;
+import io.invertase.firebase.auth.RNFirebaseAuthPackage;
+import io.invertase.firebase.messaging.RNFirebaseMessagingPackage;
+import io.invertase.firebase.database.RNFirebaseDatabasePackage;
+import io.invertase.firebase.notifications.RNFirebaseNotificationsPackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
@@ -41,7 +37,11 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
-            new RNFirebasePackage(),
+          new RNFirebasePackage(),
+          new RNFirebaseAuthPackage(),
+          new RNFirebaseDatabasePackage(),
+          new RNFirebaseMessagingPackage(),
+          new RNFirebaseNotificationsPackage(),
           new StripeReactPackage(),
           new FBSDKPackage(mCallbackManager)
       );

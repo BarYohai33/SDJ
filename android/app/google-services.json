@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "599059477459",
+    "firebase_url": "https://sdjavenir-c226c.firebaseio.com",
+    "project_id": "sdjavenir-c226c",
+    "storage_bucket": "sdjavenir-c226c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:599059477459:android:bb9194eeab44d035",
+        "android_client_info": {
+          "package_name": "com.sdj.tsedaka"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "599059477459-c9akn1mnsmupdnr8fpav6rhm2n591alc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAdUNiabbqPAgnzRaxgmwEXeln0-be4OaY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
