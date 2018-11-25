@@ -26,7 +26,7 @@ const Displayer = props => (
         onPress={props.reset}
         style={Style.button}
       >
-        <Text>Reset</Text>
+        <Text uppercase={false}>Vider</Text>
       </Button>
     </Col>
   </Grid>

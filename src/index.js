@@ -27,7 +27,6 @@ class App extends Component {
     }
 
     componentDidMount() {
-        console.log('fdp tu log')
         firebase.auth().onAuthStateChanged(user => {
             if (user != null) {
                 firebase.database().ref(`users/${user.uid}`).once('value').then(snapshot => {
@@ -52,101 +51,43 @@ class App extends Component {
         firebase.messaging().hasPermission()
           .then(enabled => {
             if (enabled) {
-              console.log('Has messaging permission')
+              this.createNotificationListeners()
               firebase.messaging().getToken().then(token => {
                 console.log(token);
               })
-              this.createNotificationListeners()
-              // user has permissions
             } else {
               firebase.messaging().requestPermission()
                 .then(() => {
-                  alert("User Now Has Permission")
-                  console.log('Permission message')
+                  console.log('Messaging permission acquired')
                 })
                 .catch(error => {
-                  alert("Error", error)
-                  console.log('Poture')
-                  // User has rejected permissions  
+                  console.log('Messaging permission denied', error)
                 });
             }
           });
-          /*firebase.notifications().onNotification((notification) => {
-            // You've received a notification that hasn't been displayed by the OS
-            // To display it whilst the app is in the foreground, simply call the following
-            firebase.notifications().displayNotification(notification);
-          });*/
-      /*this.messageListener = firebase.messaging().onMessage((message) => {
-          // Process your notification as required
-          
-          const notification = new firebase.notifications.Notification()
-          .setNotificationId('notificationId')
-          .setTitle('Poture')
-          .setBody('MPoture')
-          .setData({
-            Fdp: 'poture',
-          });          
-          console.log("LOG: ", JSON.stringify(message))
-          firebase.notifications().displayNotification(notification);
-        });*/
       }
 
   createNotificationListeners() {
-    /*
-    * Triggered when a particular notification has been received in foreground
-    * */
     const channel = new firebase.notifications.Android
-    .Channel('Poture', 'channel', firebase.notifications.Android.Importance.Max)
+    .Channel('Tsedaka', 'channel', firebase.notifications.Android.Importance.Max)
     .setDescription('Notif');
     firebase.notifications().android.createChannel(channel);
-    firebase.notifications().onNotification((notification) => {
+    this.notificationListener = firebase.notifications().onNotification((notification) => {
         console.log('onNotification', notification);
-        console.log('notifid', notification.notificationId, 'title', notification.title, 'body', notification.body)
-        //notification
-          //.android.setChannelId('test-channel')
-          //
         notification
-        .android.setChannelId('Poture')
+        .android.setChannelId('Tsedaka')
         .android.setSmallIcon('ic_stat_ic_notification')
         firebase.notifications().displayNotification(notification);
     });
 
-    /*
-    * If your app is in background, you can listen for when a notification is clicked / tapped / opened as follows:
-    * */
     firebase.notifications().onNotificationOpened((notificationOpen) => {
-        const { title, body } = notificationOpen.notification;
         console.log('onNotificationOpened', notificationOpen);
-    });
-
-    firebase.notifications().getInitialNotification().then(initialNotification => {
-      if (initialNotification) {
-          const { title, body } = initialNotification.notification;
-          console.log('getInitialNotification', initialNotification);
-      }
-      console.log('getInitialNotification untrue', initialNotification);
-    })
-
-    firebase.messaging().onMessage((message) => {
-      //process data message
-      console.log('onMessage', message);
-      const notification = new firebase.notifications.Notification()
-      .setNotificationId('notificationId')
-      .setTitle('Poture')
-      .setBody('Iench')
-      .setData({
-        Fdp: 'poture'
-      });          
-      console.log(message)
-      firebase.notifications().displayNotification(notification);
     });
   }
 
 
   componentWillUnmount() {
-    // this.notificationListener();
-    // this.notificationOpenedListener();
-    // this.initialNotification();
+    this.notificationListener();
   }
 
 

@@ -24,13 +24,13 @@ class Home extends Component {
 			amount: 0,
 			email: "",
 			loading: true,
+			canMakeNativePayments: false
 		};
 
 		this.addAmount = this.addAmount.bind(this);
 		this.resetAmount = this.resetAmount.bind(this);
 		this.editAmount = this.editAmount.bind(this);
-		this.appleProcessPayment = this.appleProcessPayment.bind(this);
-		this.androidProcessPayment = this.androidProcessPayment.bind(this);
+		this.nativeProcessPayment = this.nativeProcessPayment.bind(this);
 		this.cardPayment = this.cardPayment.bind(this);
 		this.processPayment = this.processPayment.bind(this);
 		this.processCharges = this.processCharges.bind(this);
@@ -45,7 +45,7 @@ class Home extends Component {
 			this.setState({
 				amount: user.amount,
 				email: user.email,
-				loading: false,
+				loading: false
 			});
 		});
 		stripe.setOptions({
@@ -53,6 +53,24 @@ class Home extends Component {
 			merchantId: APPLE_PAY_MERCHANT_ID,
 			androidPayMode: 'test',
 		})
+		this.checkForNativePayments()
+	}
+
+	checkForNativePayments () {
+		stripe.deviceSupportsNativePay().then(supportsNativePay => {
+			if (supportsNativePay) {
+				stripe.canMakeNativePayPayments().then(canMakePayments => {
+					if (canMakePayments) {
+						this.setState({ canMakeNativePayments: Platform.OS })
+						console.log(`Native Pay OK for ${Platform.OS}`)
+					}
+				}).catch((err) => {
+					console.log('Native pay not configured', err)
+				})
+			}
+		}).catch((err) => {
+			console.log("Device doesn't support native pay", err)
+		});
 	}
 
 	addAmount(amount) {
@@ -70,51 +88,54 @@ class Home extends Component {
 		firebase.database().ref(`users/${uid}`).update({ amount });
 	}
 
-	appleProcessPayment() {
-		console.log('InPomme',  this.state);
-		stripe.deviceSupportsNativePay().then(supportsNativePay => {
-			if (supportsNativePay) {
-				stripe.canMakeNativePayPayments().then(canMakePayments => {
-					console.log({ supportsNativePay, canMakePayments })
-					if (canMakePayments) {
-						const { amount } = this.state;
-						const items = [{ amount: amount + '', label: 'SDJ Tsedaka' }];
-						const options = {}
-
-						console.log(items, options);
-						stripe.paymentRequestWithApplePay(items, options)
-						.then(token => {
-							console.log('Tokenized', token)
-							stripe.completeNativePayRequest()
-							this.processCharges(token)
-						})
-						.catch((err) => {
-							console.log('paymentErr', err)
-							stripe.cancelNativePayRequest()
-							if (err.message !== 'Cancelled by user') {
-								this.cardPayment()
-							}
-						});
-					} else {
-						console.log('cant make payments rollback to card')
-						this.cardPayment()
-					};
-				}).catch((err) => {
-					console.log('cant make payments rollback to card', err)
-					this.cardPayment()
-				});
-			} else {
-				console.log('no support apple pay')
-				this.cardPayment();
+	nativeProcessPayment() {
+		console.log('NativeProcessPayment', this.state);
+		if (this.state.canMakeNativePayments) {
+			const { amount } = this.state;
+			const items = {
+				total_price: amount + '',
+				currency_code: 'EUR',
+				shipping_address_required: false,
+				billing_address_required: true,
+				line_items: [{
+					amount: amount + '', 
+					label: 'SDJ Tsedaka',
+				    currency_code: 'EUR',
+				    description: 'Tsedaka',
+				    total_price: amount + '',
+				    unit_price: amount + '',
+				    quantity: '1'
+				}]
+			};
+			const options = {
+				currencyCode: 'EUR',
+				countryCode: 'FR'
 			}
-		}).catch((err) => {
-			console.log('no support apple pay', err)
-			this.cardPayment()
-		});
-	}
 
-	androidProcessPayment() {
-		this.cardPayment();
+			let nativePaymentRequest = {}
+			if (Platform.OS === 'ios') {
+				nativePaymentRequest = (items, options) => stripe.paymentRequestWithApplePay(items.line_items, options)
+			} else {
+				nativePaymentRequest = (items, options = {}) => stripe.paymentRequestWithNativePay(items)
+			}
+			console.log(items, options);
+
+			nativePaymentRequest(items, options)
+			.then(token => {
+				console.log('Tokenized', token)
+				stripe.completeNativePayRequest()
+				this.processCharges(token)
+			})
+			.catch((err) => {
+				console.log('paymentErr', err)
+				stripe.cancelNativePayRequest()
+				if (err.message !== 'Cancelled by user' && err.message !== 'Purchase was cancelled') {
+					this.cardPayment()
+				}
+			});
+		} else {
+			this.cardPayment()
+		}
 	}
 
 	cardPayment() {
@@ -131,10 +152,9 @@ class Home extends Component {
 
 	processPayment() {
 		if (this.state.amount < 5) {
-			this.showError("Il faut que le montant soit supérieur à 5 euros");
+			this.showError("Le montant doit être supérieur à 5 euros");
 		} else {
-			if (Platform.OS === 'ios') this.appleProcessPayment();
-			else this.androidProcessPayment();
+			this.nativeProcessPayment();
 		}
 	}
 
@@ -183,7 +203,8 @@ class Home extends Component {
 					loading={this.state.loading}
 				/>
 				<Footer
-					processPayment={this.processPayment}
+					processPayment={this.processPayment} 
+					canMakeNativePayments={this.state.canMakeNativePayments}
 				/>
 			</Container>
 		);

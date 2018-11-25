@@ -5844,9 +5844,9 @@ timed-out@^4.0.0:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/timed-out/-/timed-out-4.0.1.tgz#f32eacac5a175bea25d7fab565ab3ed8741ef56f"
 
-tipsi-stripe@5.6.0:
-  version "5.6.0"
-  resolved "https://registry.yarnpkg.com/tipsi-stripe/-/tipsi-stripe-5.6.0.tgz#c393060998518982a54fd4e77247338a15805865"
+tipsi-stripe@^6.1.2:
+  version "6.1.2"
+  resolved "https://registry.yarnpkg.com/tipsi-stripe/-/tipsi-stripe-6.1.2.tgz#68289d5638a6bea4e9adeeb10e7dafe9f642fc15"
 
 tmp@^0.0.33:
   version "0.0.33"

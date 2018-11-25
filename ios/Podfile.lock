@@ -188,7 +188,7 @@ PODS:
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
   - Protobuf (3.6.1)
-  - Stripe (11.2.0)
+  - Stripe (13.2.0)
 
 DEPENDENCIES:
   - Crashlytics (~> 3.10.9)
@@ -203,7 +203,7 @@ DEPENDENCIES:
   - Firebase/Performance (~> 5.11.0)
   - Firebase/RemoteConfig (~> 5.11.0)
   - Firebase/Storage (~> 5.11.0)
-  - Stripe (~> 11.2.0)
+  - Stripe (~> 13.2.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -272,8 +272,8 @@ SPEC CHECKSUMS:
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
-  Stripe: 898f83a95d72180c6eb4acd65b2ae6158fc6a8bd
+  Stripe: 2c69e216061d54d9c538204bb4f58bd597ddfc5b
 
-PODFILE CHECKSUM: 5be34b18cbb8e2cf8afb7856782a356a94ffabf8
+PODFILE CHECKSUM: 723fe2e234ac2a6bccc77adac64af6e6eca6ee53
 
 COCOAPODS: 1.5.2

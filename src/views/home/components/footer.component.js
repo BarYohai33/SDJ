@@ -1,6 +1,6 @@
 // React
 import React from 'react';
-import { Linking, Platform } from 'react-native';
+import { Linking, Platform, Image } from 'react-native';
 import { Footer as NBFooter, FooterTab, Button, Text, Icon, Grid, Col } from 'native-base';
 
 // Local
@@ -15,8 +15,13 @@ const Footer = props => (
 				style={Style.button}
 				onPress={props.processPayment}
 			>
-				<Icon style={Style.text} ios='ios-card' android='md-card' />
-				<Text style={Style.text}>Payer</Text>
+			{ props.canMakeNativePayments === 'ios'
+				? <Image source={require("../../../../img/APay.png")} style={Style.image} />
+				: props.canMakeNativePayments === 'android' 
+					? <Image source={require("../../../../img/GPay.png")} style={Style.image} />
+					: <Icon style={Style.iconText} ios='ios-card' android='md-card' />
+			}
+			<Text uppercase={false} style={Style.text}>Payer</Text>
 			</Button>
 		</FooterTab>
 	</NBFooter>

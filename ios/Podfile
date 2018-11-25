@@ -6,7 +6,7 @@ workspace 'SDJAvenir'
 
 target 'SDJAvenir' do
   # Stripe
-  pod 'Stripe', '~> 11.2.0'
+  pod 'Stripe', '~> 13.2.0'
 
   # Required by RNFirebase
   pod 'Firebase/Core', '~> 5.11.0'
