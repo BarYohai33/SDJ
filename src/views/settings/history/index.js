@@ -28,6 +28,16 @@ class History extends Component {
 
   }
 
+  getFrDateTime (transformedDate) {
+    const date = new Date(transformedDate)
+
+    return ('0' + date.getDate()).slice(-2) + '/'
+                + ('0' + (date.getMonth()+1)).slice(-2) + '/'
+                + date.getFullYear() + ' '
+                + (date.getHours() < 10 ? '0' + date.getHours() : date.getHours()) + ':'
+                + (date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes());
+  }
+
   componentWillMount() {
     const { uid } = firebase.auth().currentUser;
     firebase.database().ref(`users/${uid}`).once('value').then(snap => {
@@ -37,6 +47,9 @@ class History extends Component {
           if (donation.val().userId === uid) {
             donations.splice(0, 0, donation.val());
           }
+        });
+        donations.sort(function (a, b) {
+          return new Date(a.date) - new Date(b.date);
         });
         this.setState({ userData: snap.val(), donations, loading: false });
       });
@@ -61,7 +74,7 @@ class History extends Component {
             this.state.donations.map((donation, key) => (
               <ListItem icon key={key}>
                 <Body>
-                  <Text>{`${new Date(donation.date).getDate()}/${new Date(donation.date).getMonth()+1}/${new Date(donation.date).getFullYear()} à ${new Date(donation.date).getHours()}:${new Date(donation.date).getMinutes()}`} - {donation.amount} €</Text>
+                  <Text>{ this.getFrDateTime(donation.date) } - {donation.amount} €</Text>
                 </Body>
                 <Right>
                   <Button icon light onPress={() => {

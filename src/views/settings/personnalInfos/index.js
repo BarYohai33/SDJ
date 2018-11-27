@@ -17,6 +17,8 @@ class PersonnalInfos extends Component {
       address: "",
       postalCode: "",
       city: "",
+      nom: "",
+      prenom: "",
       loading: true,
     };
 
@@ -32,6 +34,8 @@ class PersonnalInfos extends Component {
         address: snapshot.val().address,
         postalCode: snapshot.val().postalCode,
         city: snapshot.val().city,
+        nom: snapshot.val().displayName.split(' ')[0],
+        prenom: snapshot.val().displayName.split(' ')[1],
         loading: false,
       });
     });
@@ -51,6 +55,7 @@ class PersonnalInfos extends Component {
       address: this.state.address,
       postalCode: this.state.postalCode,
       city: this.state.city,
+      displayName: this.state.nom + ' ' + this.state.prenom
     })
     .then(() => this.props.navigation.goBack())
     .catch(error => this.showError(error.message));
@@ -74,6 +79,8 @@ class PersonnalInfos extends Component {
             address={this.state.address}
             postalCode={this.state.postalCode}
             city={this.state.city}
+            nom={this.state.nom}
+            prenom={this.state.prenom}
             loading={this.state.loading}
             change={this.handleChange}
             submit={this.handleSubmit}

@@ -10,18 +10,18 @@ const Footer = props => (
 	<NBFooter>
 		<FooterTab>
 			<Button
-				full primary
+				full light
 				iconLeft
 				style={Style.button}
 				onPress={props.processPayment}
 			>
+			<Text uppercase={false} style={Style.text}>Payer { props.canMakeNativePayments ? 'avec' : '' }</Text>
 			{ props.canMakeNativePayments === 'ios'
 				? <Image source={require("../../../../img/APay.png")} style={Style.image} />
 				: props.canMakeNativePayments === 'android' 
 					? <Image source={require("../../../../img/GPay.png")} style={Style.image} />
 					: <Icon style={Style.iconText} ios='ios-card' android='md-card' />
 			}
-			<Text uppercase={false} style={Style.text}>Payer</Text>
 			</Button>
 		</FooterTab>
 	</NBFooter>

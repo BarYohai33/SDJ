@@ -10,6 +10,22 @@ const SignupForm = props => (
     <Item regular style={Style.item}>
       <Input
         keyboardType='default'
+        placeholder='Nom...'
+        value={props.nom}
+        onChangeText={e => props.change('nom', e)}
+      />
+    </Item>
+    <Item regular style={Style.item}>
+      <Input
+        keyboardType='default'
+        placeholder='Prénom...'
+        value={props.prenom}
+        onChangeText={e => props.change('prenom', e)}
+      />
+    </Item>
+    <Item regular style={Style.item}>
+      <Input
+        keyboardType='default'
         placeholder='Adresse...'
         value={props.address}
         onChangeText={e => props.change('address', e)}

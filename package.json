@@ -16,6 +16,7 @@
     "react-native": "^0.57.3",
     "react-native-fbsdk": "^0.8.0",
     "react-native-firebase": "^5.1.0",
+    "react-native-sound": "^0.10.9",
     "react-navigation": "^2.0.4",
     "sha256": "^0.2.0",
     "tipsi-stripe": "^6.1.2",

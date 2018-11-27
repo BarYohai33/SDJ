@@ -43,6 +43,8 @@
 		506FE6E92BAC4FFDA29CE5D9 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FC7974F558A04B0A8D91D2AF /* Ionicons.ttf */; };
 		58C9A46A10034F31BAE8A974 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 17C6560B4C40425F93ED6A01 /* MaterialIcons.ttf */; };
 		660576E821A78D7A0004B5A6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 660576E721A78D790004B5A6 /* GoogleService-Info.plist */; };
+		6633AA0721ACADE2008F5883 /* cointoss.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6633AA0621ACADE2008F5883 /* cointoss.mp3 */; };
+		6635C7B621ACA253005DCF36 /* libRNSound.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6635C7B421ACA230005DCF36 /* libRNSound.a */; };
 		6676BD52AA3045FD9B3FC256 /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 202AB5778E7F45FA850BC2E1 /* Entypo.ttf */; };
 		66D6E4FD21A7251800CD26CA /* libFirebaseMessaging.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 66D6E4FC21A7251800CD26CA /* libFirebaseMessaging.a */; };
 		66E007BE21A73B7200307C25 /* libRNFirebase.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 667D171E21A377E400C56885 /* libRNFirebase.a */; };
@@ -330,6 +332,13 @@
 			remoteGlobalIDString = 2D2A28201D9B03D100D4039D;
 			remoteInfo = "RCTAnimation-tvOS";
 		};
+		6635C7B321ACA230005DCF36 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6635C78821ACA230005DCF36 /* RNSound.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 19825A1E1BD4A89800EE0337;
+			remoteInfo = RNSound;
+		};
 		667D171D21A377E400C56885 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C9FD1E0160154A9295B88B4C /* RNFirebase.xcodeproj */;
@@ -398,6 +407,8 @@
 		591DFB0A7F3B4D8C82230776 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ./ios/Frameworks/FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
 		660576E721A78D790004B5A6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6633AA0621ACADE2008F5883 /* cointoss.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = cointoss.mp3; path = ../../cointoss.mp3; sourceTree = "<group>"; };
+		6635C78821ACA230005DCF36 /* RNSound.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNSound.xcodeproj; path = "../node_modules/react-native-sound/RNSound.xcodeproj"; sourceTree = "<group>"; };
 		667E16A721AA02B6006CD580 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		66D6E4FC21A7251800CD26CA /* libFirebaseMessaging.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libFirebaseMessaging.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
@@ -431,6 +442,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6635C7B621ACA253005DCF36 /* libRNSound.a in Frameworks */,
 				66E007BE21A73B7200307C25 /* libRNFirebase.a in Frameworks */,
 				66D6E4FD21A7251800CD26CA /* libFirebaseMessaging.a in Frameworks */,
 				66F85525219C9F7F0017345B /* libRCTLinking.a in Frameworks */,
@@ -648,6 +660,7 @@
 		55000143D5D749E3A62BEFE8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6633AA0621ACADE2008F5883 /* cointoss.mp3 */,
 				202AB5778E7F45FA850BC2E1 /* Entypo.ttf */,
 				8135C5ABA7884624A1EEED94 /* EvilIcons.ttf */,
 				854EF64D3ABD4030902BC208 /* FontAwesome.ttf */,
@@ -675,6 +688,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		6635C78921ACA230005DCF36 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6635C7B421ACA230005DCF36 /* libRNSound.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		667D171A21A377E400C56885 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -695,6 +716,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				6635C78821ACA230005DCF36 /* RNSound.xcodeproj */,
 				0B56937020CD725000066BC2 /* TPSStripe.xcodeproj */,
 				5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */,
 				146833FF1AC3E56700842450 /* React.xcodeproj */,
@@ -954,6 +976,10 @@
 				{
 					ProductGroup = 667D171A21A377E400C56885 /* Products */;
 					ProjectRef = C9FD1E0160154A9295B88B4C /* RNFirebase.xcodeproj */;
+				},
+				{
+					ProductGroup = 6635C78921ACA230005DCF36 /* Products */;
+					ProjectRef = 6635C78821ACA230005DCF36 /* RNSound.xcodeproj */;
 				},
 				{
 					ProductGroup = 0B56937120CD725000066BC2 /* Products */;
@@ -1223,6 +1249,13 @@
 			remoteRef = 5E9157341DD0AC6500FF2AA8 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		6635C7B421ACA230005DCF36 /* libRNSound.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNSound.a;
+			remoteRef = 6635C7B321ACA230005DCF36 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		667D171E21A377E400C56885 /* libRNFirebase.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -1277,6 +1310,7 @@
 				8619A3C0693844EC903F698D /* Roboto_medium.ttf in Resources */,
 				8D0B7564EC184F5F86FE8CE8 /* Roboto.ttf in Resources */,
 				D8F544FB24034BCCB32BC157 /* rubicon-icon-font.ttf in Resources */,
+				6633AA0721ACADE2008F5883 /* cointoss.mp3 in Resources */,
 				660576E821A78D7A0004B5A6 /* GoogleService-Info.plist in Resources */,
 				306F9A4006814638AEBB9078 /* SimpleLineIcons.ttf in Resources */,
 				FC4550DF2F2541B786FA825E /* Zocial.ttf in Resources */,

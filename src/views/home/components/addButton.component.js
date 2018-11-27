@@ -13,7 +13,7 @@ const AddButton = props => (
     style={Style.button}
   >
     <Icon style={Style.text} ios='ios-cash' android='md-cash' />
-    <Text uppercase={false} style={Style.text}>Autres montants</Text>
+    <Text uppercase={false} style={Style.text}>Autre montant</Text>
   </Button>
 );
 

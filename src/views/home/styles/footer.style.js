@@ -3,17 +3,18 @@
 const text = {
 	fontSize: 20,
 	paddingTop: 10,
-	color: "#FFF",
+	paddingRight: 2,
+	color: 'black'
 };
 
 const iconText = {
-	paddingTop: 1,
-	color: "#FFF",
+	paddingTop: 5,
+	color: 'black',
 };
 
 const button = {
 	flexDirection: 'row',
-	alignItems: 'center'
+	alignItems: 'center',
 };
 
 const image = {

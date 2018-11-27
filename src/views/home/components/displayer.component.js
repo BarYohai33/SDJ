@@ -15,7 +15,7 @@ const Displayer = props => (
       </Button>:
       <Text style={Style.text}>
         Montant :{' '}
-        <Text style={Style.text}>€ {Math.round(props.amount*100)/100}</Text>
+        <Text style={Style.text}>{Math.round(props.amount*100)/100} €</Text>
       </Text>
     }
     </Col>

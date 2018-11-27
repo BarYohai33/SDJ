@@ -147,7 +147,7 @@ class Home extends Component {
 		}
 		stripe.paymentRequestWithCardForm(options)
 		.then(token => this.processCharges(token))
-		.catch(() => this.showError("An error has occured"));
+		.catch(() => this.showError("Le paiement a été annulé"));
 	}
 
 	processPayment() {
