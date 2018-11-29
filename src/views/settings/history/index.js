@@ -64,7 +64,8 @@ class History extends Component {
     ref={ref => this.scrollView = ref}
     onContentSizeChange={(contentWidth, contentHeight)=>{        
         this.scrollView.scrollToEnd({animated: true});
-    }}>
+    }}
+    contentContainerStyle={{ flexGrow: 1 }}>
 
         <BackgroundImage dimensions={this.props.screenProps.dimensions} />
         {
