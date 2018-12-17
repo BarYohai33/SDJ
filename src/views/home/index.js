@@ -57,9 +57,9 @@ class Home extends Component {
 	}
 
 	checkForNativePayments () {
-		stripe.deviceSupportsNativePay().then(supportsNativePay => {
+		stripe.deviceSupportsApplePay().then(supportsNativePay => {
 			if (supportsNativePay) {
-				stripe.canMakeNativePayPayments().then(canMakePayments => {
+				stripe.canMakeApplePayPayments().then(canMakePayments => {
 					if (canMakePayments) {
 						this.setState({ canMakeNativePayments: Platform.OS })
 						console.log(`Native Pay OK for ${Platform.OS}`)
@@ -113,11 +113,11 @@ class Home extends Component {
 			}
 
 			let nativePaymentRequest = {}
-			if (Platform.OS === 'ios') {
+			// if (Platform.OS === 'ios') {
 				nativePaymentRequest = (items, options) => stripe.paymentRequestWithApplePay(items.line_items, options)
-			} else {
-				nativePaymentRequest = (items, options = {}) => stripe.paymentRequestWithNativePay(items)
-			}
+			// } else {
+			// 	nativePaymentRequest = (items, options = {}) => stripe.paymentRequestWithNativePay(items)
+			// }
 			console.log(items, options);
 
 			nativePaymentRequest(items, options)
